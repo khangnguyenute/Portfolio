@@ -92,6 +92,21 @@ header {
   position: relative;
   background-color: var(--secondary-color-dark);
 }
+.header__social {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.header__social a {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  background-image: var(--gradient);
+  padding: 4px 10px;
+}
 .nav__logo a {
   font-size: 1.5rem;
   font-weight: 700;
@@ -129,18 +144,21 @@ header {
   align-items: center;
   padding-block: 0;
 }
-.header__container h4 {
+.header__content {
+  grid-area: 1/1/2/2;
+}
+.header__content h4 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: 400;
 }
-.header__container h1 {
+.header__content h1 {
   margin-bottom: 2rem;
   font-size: 3rem;
   font-weight: 600;
   line-height: 3.5rem;
 }
-.header__container p {
+.header__content p {
   margin-bottom: 2rem;
 }
 .header__image img {
@@ -178,7 +196,10 @@ header {
   align-items: center;
   gap: 1rem;
 }
-.about__links a {
+.about__links button > a {
+  color: var(--secondary-color);
+}
+.about__links > a {
   font-size: 1.25rem;
   color: var(--secondary-color);
   background-image: var(--gradient);
@@ -453,6 +474,9 @@ footer {
     position: relative;
     background-color: var(--secondary-color-dark);
   }
+  .header__social {
+    display: none;
+  }
   .nav__bar {
     padding: 0;
     position: fixed;
@@ -493,6 +517,9 @@ footer {
     gap: 4rem;
     text-align: center;
     padding-block: 5rem;
+  }
+  .header__content {
+    grid-area: auto;
   }
 
   /* ABOUT */
